@@ -12,7 +12,11 @@ class QuizRepositoryImpl extends QuizRepository {
   @override
   Future<Either<Failure, List<QuizEntity>>> getQuizzes() async {
     try {
-      return Right((await remoteDataSource.getQuizzes()).map((e) => e.toEntity(),).toList());
+      return Right((await remoteDataSource.getQuizzes())
+          .map(
+            (e) => e.toEntity(),
+          )
+          .toList());
     } catch (e) {
       return Left(ParsingFailure(e.toString()));
     }

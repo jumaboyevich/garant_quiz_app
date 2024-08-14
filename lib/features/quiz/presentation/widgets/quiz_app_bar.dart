@@ -10,27 +10,22 @@ class QuizAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 18),
-              height: 52,
-              decoration: BoxDecoration(
-                color: white,
-                borderRadius: BorderRadius.circular(8)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(AppIcons.logOut)),
-                  IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(AppIcons.messagesCaution)),
-                  IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(AppIcons.nightMode)),
-                  const TimerBar()
-                  
-                ],
-              ),
-            );
+      margin: const EdgeInsets.symmetric(horizontal: 18),
+      height: 52,
+      decoration:
+          BoxDecoration(color: white, borderRadius: BorderRadius.circular(8)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          IconButton(onPressed: () {}, icon: SvgPicture.asset(AppIcons.logOut)),
+          IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(AppIcons.messagesCaution)),
+          IconButton(
+              onPressed: () {}, icon: SvgPicture.asset(AppIcons.nightMode)),
+          const TimerBar()
+        ],
+      ),
+    );
   }
 }

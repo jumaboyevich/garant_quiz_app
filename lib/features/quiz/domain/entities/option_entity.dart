@@ -11,7 +11,6 @@ class OptionEntity extends Equatable {
     this.content = "",
   });
 
-
   @override
   List<Object?> get props => [title, content];
 }

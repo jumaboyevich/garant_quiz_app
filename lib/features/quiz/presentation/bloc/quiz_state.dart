@@ -22,14 +22,13 @@ class QuizState {
       Failure? message,
       List<QuizEntity>? data,
       int? spendedTime,
-      int? totalTime
-      }) {
+      int? totalTime}) {
     return QuizState._(
-        status: status ?? this.status,
-        data: data ?? this.data,
-        message: message ?? this.message,
-        spendedTime: spendedTime ?? this.spendedTime,
-        totalTime: totalTime ?? this.totalTime,
-        );
+      status: status ?? this.status,
+      data: data ?? this.data,
+      message: message ?? this.message,
+      spendedTime: spendedTime ?? this.spendedTime,
+      totalTime: totalTime ?? this.totalTime,
+    );
   }
 }

@@ -6,17 +6,10 @@ part 'quiz_model.g.dart';
 
 @JsonSerializable()
 class QuizModel extends QuizEntity {
-  const QuizModel({
-    super.question,
-    super.options,
-    super.correctOption
-  });
+  const QuizModel({super.question, super.options, super.correctOption});
 
   QuizEntity toEntity() => QuizEntity(
-    correctOption: correctOption,
-    options: options,
-    question: question
-  );
+      correctOption: correctOption, options: options, question: question);
   factory QuizModel.fromJson(Map<String, dynamic> json) =>
       _$QuizModelFromJson(json);
 

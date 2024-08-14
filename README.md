@@ -1,3 +1,3 @@
-# garant_test
+# Garant Quiz App
 
 A new Flutter project.

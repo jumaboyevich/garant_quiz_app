@@ -41,10 +41,9 @@ class _TimerBarState extends State<TimerBar> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-                    decoration: BoxDecoration(
-                        color: const Color(0xffF1F3F7),
-                        borderRadius: BorderRadius.circular(34)),
-                    
+      decoration: BoxDecoration(
+          color: const Color(0xffF1F3F7),
+          borderRadius: BorderRadius.circular(34)),
       child: Row(
         children: [
           SvgPicture.asset(AppIcons.stopwatch),

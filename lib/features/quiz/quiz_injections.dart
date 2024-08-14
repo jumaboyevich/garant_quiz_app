@@ -7,8 +7,8 @@ import 'package:garant_test/features/quiz/presentation/bloc/quiz_bloc.dart';
 
 initQuizInjections() {
   //Quizzes
-  serviceLocator.registerSingleton<QuizRemoteDataSource>(
-      QuizRemoteDataSourceImpl());
+  serviceLocator
+      .registerSingleton<QuizRemoteDataSource>(QuizRemoteDataSourceImpl());
   serviceLocator.registerSingleton<QuizRepository>(
       QuizRepositoryImpl(remoteDataSource: serviceLocator()));
   serviceLocator.registerSingleton<GetQuizzesUseCase>(
@@ -16,4 +16,4 @@ initQuizInjections() {
   serviceLocator.registerFactory<QuizBloc>(
     () => QuizBloc(getQuizzesUseCase: serviceLocator()),
   );
- }
+}

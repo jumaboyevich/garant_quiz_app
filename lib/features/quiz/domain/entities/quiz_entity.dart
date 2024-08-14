@@ -21,20 +21,18 @@ class QuizEntity extends Equatable {
 
   bool get initialSelectedAnswer => selectedItem == null;
 
-
-
   Color get tabIndicatorColor {
     if (initialSelectedAnswer) {
       return white;
     }
-    
+
     if (!isCorrectAnswer) {
       return flamingo;
     }
     return greenBlue;
   }
 
-   Color optionsBackroundColor(OptionEntity item) {
+  Color optionsBackroundColor(OptionEntity item) {
     if (initialSelectedAnswer) {
       return white;
     }
@@ -42,8 +40,8 @@ class QuizEntity extends Equatable {
     if (item == selectedItem) {
       return isCorrectAnswer ? greenHex00D856 : flamingo;
     }
-    if (item.title==correctOption) {
-      return  greenHex00D856;
+    if (item.title == correctOption) {
+      return greenHex00D856;
     }
 
     return white;

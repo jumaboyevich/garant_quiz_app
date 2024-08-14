@@ -12,7 +12,6 @@ class QuizContentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 24),
       shrinkWrap: true,
       children: [

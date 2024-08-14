@@ -6,11 +6,12 @@ abstract class QuizRemoteDataSource {
 }
 
 class QuizRemoteDataSourceImpl extends QuizRemoteDataSource {
-
   QuizRemoteDataSourceImpl();
 
   @override
   Future<List<QuizModel>> getQuizzes() async {
-    return (quizzesSampleResponse["data"] as List).map((e) => QuizModel.fromJson(e)).toList();
+    return (quizzesSampleResponse["data"] as List)
+        .map((e) => QuizModel.fromJson(e))
+        .toList();
   }
 }

@@ -38,17 +38,17 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
   }
 
   void setQuizAnswer(SetQuizAnswerEvent event, Emitter<QuizState> emit) async {
-  
-      List<QuizEntity> items = state.data;
+    List<QuizEntity> items = state.data;
 
-      items.removeAt(event.index);
-      items.insert(event.index, event.item.copyWith(selectedItem: event.selectedOption));
+    items.removeAt(event.index);
+    items.insert(
+        event.index, event.item.copyWith(selectedItem: event.selectedOption));
 
-      emit(state.copyWith(data: items));
+    emit(state.copyWith(data: items));
   }
 
-  void setSpendedTime(SetSpendedTimeEvent event, Emitter<QuizState> emit) async {
-  
-      emit(state.copyWith(spendedTime: event.time));
+  void setSpendedTime(
+      SetSpendedTimeEvent event, Emitter<QuizState> emit) async {
+    emit(state.copyWith(spendedTime: event.time));
   }
 }

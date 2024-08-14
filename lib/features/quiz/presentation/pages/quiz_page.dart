@@ -76,7 +76,8 @@ class _QuizPageState extends State<QuizPage>
                     }
 
                     final totalQuestions = items.length;
-                    final spendedTime = context.read<QuizBloc>().state.spendedTime;
+                    final spendedTime =
+                        context.read<QuizBloc>().state.spendedTime;
                     final totalTime = context.read<QuizBloc>().state.totalTime;
                     final correctAnswers =
                         items.where((obj) => obj.isCorrectAnswer).length;
@@ -88,8 +89,8 @@ class _QuizPageState extends State<QuizPage>
                         .length;
 
                     QuizResultEntity result = QuizResultEntity(
-                      spendedTime: spendedTime,
-                      totalTime: totalTime,
+                        spendedTime: spendedTime,
+                        totalTime: totalTime,
                         totalBall: 0,
                         incorrectAnswers: incorrectAnswers,
                         correctAnswers: correctAnswers,
