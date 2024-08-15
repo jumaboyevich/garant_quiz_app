@@ -27,7 +27,7 @@ class QuizCounterIndicators extends StatelessWidget {
                     icon: Icon(
                       Icons.arrow_drop_down,
                       color: tabController.index == index
-                          ? grayHex8192A5
+                          ? blue
                           : Colors.transparent,
                     ),
                     child: Container(
@@ -51,7 +51,7 @@ class QuizCounterIndicators extends StatelessWidget {
           controller: tabController,
           indicatorColor: Colors.transparent,
           indicatorSize: TabBarIndicatorSize.tab,
-          padding: EdgeInsets.zero,
+          padding: const EdgeInsets.symmetric(horizontal: 18),
         ),
       ),
     );

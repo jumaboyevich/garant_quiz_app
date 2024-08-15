@@ -13,6 +13,7 @@ import 'package:garant_test/features/quiz/presentation/widgets/quiz_counter_indi
 class QuizPage extends StatefulWidget {
   const QuizPage({super.key, required this.items});
   final List<QuizEntity> items;
+
   @override
   State<QuizPage> createState() => _QuizPageState();
 }
@@ -57,7 +58,7 @@ class _QuizPageState extends State<QuizPage>
         ),
         _tabController.index == _tabController.length - 1
             ? Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 18),
+                padding: const EdgeInsets.only(left: 18, right: 18, bottom: 18),
                 child: InkWell(
                   onTap: () {
                     List<QuizEntity> items =
@@ -134,7 +135,13 @@ class _QuizPageState extends State<QuizPage>
                                   .animateTo(_tabController.index - 1);
                             },
                       icon: SvgPicture.asset(AppIcons.arrowLeft)),
-                  Text("${_tabController.index + 1}/${_tabController.length}"),
+                  Text(
+                    "${_tabController.index + 1}/${_tabController.length}",
+                    style: const TextStyle(
+                        color: grayHex8192A5,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400),
+                  ),
                   IconButton(
                       onPressed:
                           _tabController.index == _tabController.length - 1

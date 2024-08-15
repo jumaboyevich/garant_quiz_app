@@ -32,3 +32,8 @@ flutter:
     - assets/icons/
     - assets/fonts/
 
+  fonts:
+    - family: Golos
+      fonts:
+        - asset: assets/fonts/GolosText-Regular.ttf
+

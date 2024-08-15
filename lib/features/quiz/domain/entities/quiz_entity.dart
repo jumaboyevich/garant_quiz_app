@@ -47,6 +47,36 @@ class QuizEntity extends Equatable {
     return white;
   }
 
+  Color optionsTextColor(OptionEntity item) {
+    if (initialSelectedAnswer) {
+      return gray14;
+    }
+
+    if (item == selectedItem) {
+      return white;
+    }
+    if (item.title == correctOption) {
+      return white;
+    }
+
+    return gray14;
+  }
+
+  Color optionsTitleColor(OptionEntity item) {
+    if (initialSelectedAnswer) {
+      return blue;
+    }
+
+    if (item == selectedItem) {
+      return white;
+    }
+    if (item.title == correctOption) {
+      return white;
+    }
+
+    return blue;
+  }
+
   bool get isCorrectAnswer {
     if (initialSelectedAnswer) {
       return false;

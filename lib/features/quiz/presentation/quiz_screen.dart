@@ -34,7 +34,6 @@ class QuizScreen extends StatelessWidget {
             ),
             Expanded(
               child: BlocBuilder<QuizBloc, QuizState>(
-                // buildWhen: (previous, current) => previous.status!=current.status || previous.data!=current.data,
                 builder: (context, state) {
                   if (state.status.isInProgress) {
                     return const Center(

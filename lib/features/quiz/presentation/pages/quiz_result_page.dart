@@ -4,6 +4,7 @@ import 'package:garant_test/assets/colors/colors.dart';
 import 'package:garant_test/assets/constants/icons.dart';
 import 'package:garant_test/features/quiz/domain/entities/quiz_result_entity.dart';
 import 'package:garant_test/features/quiz/presentation/quiz_screen.dart';
+import 'package:garant_test/features/quiz/presentation/widgets/quiz_result_indicator.dart';
 
 class QuizResultPage extends StatefulWidget {
   const QuizResultPage({super.key, required this.result});
@@ -27,6 +28,13 @@ class _QuizResultPageState extends State<QuizResultPage>
     )..forward();
   }
 
+  restartQuiz() {
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (BuildContext context) => QuizScreen.screen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +49,12 @@ class _QuizResultPageState extends State<QuizResultPage>
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              QuizResultIndicator(
+                result: widget.result,
+              ),
+              const SizedBox(
+                height: 12,
+              ),
               const Text("Yakunlandi",
                   style: TextStyle(
                       fontSize: 24,
@@ -170,29 +184,20 @@ class _QuizResultPageState extends State<QuizResultPage>
                 height: 12,
               ),
               InkWell(
-                onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              QuizScreen.screen()));
-                },
+                onTap: restartQuiz,
                 child: SizedBox(
                   height: 56,
                   child: Material(
                       color: blue,
                       borderRadius: BorderRadius.circular(8),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            Icons.refresh,
-                            color: white,
-                          ),
-                          SizedBox(
+                          SvgPicture.asset(AppIcons.refresh),
+                          const SizedBox(
                             width: 12,
                           ),
-                          Text(
+                          const Text(
                             "Qayta urinish",
                             style: TextStyle(
                                 color: white,

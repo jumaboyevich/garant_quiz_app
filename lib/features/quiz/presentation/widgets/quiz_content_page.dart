@@ -33,12 +33,10 @@ class QuizContentPage extends StatelessWidget {
           ),
           shrinkWrap: true,
           itemCount: item.options.length,
-          itemBuilder: (context, index) => Container(
-            padding: const EdgeInsets.only(
-                right: 6.23, left: 18, top: 18, bottom: 18),
-            decoration: BoxDecoration(
-                color: item.optionsBackroundColor(item.options[index]),
-                borderRadius: BorderRadius.circular(8)),
+          itemBuilder: (context, index) => Material(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8))),
+            color: item.optionsBackroundColor(item.options[index]),
             child: InkWell(
               onTap: () {
                 context.read<QuizBloc>().add(SetQuizAnswerEvent(
@@ -46,24 +44,33 @@ class QuizContentPage extends StatelessWidget {
                     item: item,
                     selectedOption: item.options[index]));
               },
-              child: Row(
-                children: [
-                  Text(
-                    item.options[index].title,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.w500, color: blue),
-                  ),
-                  const SizedBox(
-                    width: 6,
-                  ),
-                  Expanded(
-                    child: Text(item.options[index].content,
-                        style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                            color: gray14)),
-                  ),
-                ],
+              child: Container(
+                padding: const EdgeInsets.only(
+                    right: 6.23, left: 18, top: 18, bottom: 18),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                child: Row(
+                  children: [
+                    Text(
+                      item.options[index].title,
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: item.optionsTitleColor(item.options[index])),
+                    ),
+                    const SizedBox(
+                      width: 6,
+                    ),
+                    Expanded(
+                      child: Text(item.options[index].content,
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                              color:
+                                  item.optionsTextColor(item.options[index]))),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
